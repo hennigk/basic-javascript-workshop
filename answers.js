@@ -259,3 +259,20 @@ function truthyArray(arrayInput){
 }
 
 console.log(truthyArray([2, 6, null, 6, 8, undefined, 10, 2323, "", "Kayla"]));
+
+/* a function that takes an array of numbers, 
+and returns the sum of all the numbers in the array*/
+
+function sumArray(arrayToSum){
+    var ArraySumTruthy = truthyArray(arrayToSum)
+    var sumOfArray = 0;
+    for (var i = 0; i< ArraySumTruthy.length; i++){
+        sumOfArray += ArraySumTruthy[i];
+        //console.log(arrayToSum[i]);
+        //console.log(typeof arrayToSum[i]);
+    }
+    return sumOfArray;
+}
+
+console.log(sumArray([2, 5, 9, 2, 90, 100]));
+console.log(sumArray([2, 6, null, 6, 8, undefined, 10, 2323, "", "Kayla"]));
