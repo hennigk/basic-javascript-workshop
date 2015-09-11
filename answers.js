@@ -69,3 +69,62 @@ function multiply(num1, num2) {
 
 console.log(multiply(8, 4));
 console.log(multiply("Kayla", 4));
+
+
+/*a function that takes two numbers and subtracts them*/
+function subtract(num1, num2) {
+    if ((typeof num1 != 'number') || (typeof num2 != 'number')) {
+        return "One of the parameters is not a number!";
+    }
+    else {
+    return num1 - num2;
+    }
+}
+console.log(subtract(8, 4));
+console.log(subtract("Kayla", 4));
+
+/*a function that takes two numbers and divides them*/
+function division(num1, num2) {
+    if ((typeof num1 != 'number') || (typeof num2 != 'number')) {
+        return "One of the parameters is not a number!";
+    }
+    else {
+    return num1 / num2;
+    }
+}
+
+console.log(division(8, 4));
+console.log(division("Kayla", 4));
+
+
+/*a function that takes two numbers and a string. 
+If the string is ‘add’, then return the sum of the numbers. 
+If the string is ‘subtract’, return the difference. 
+If the string is ‘mult’, return the product. 
+If the string is ‘div’, 
+return the ratio. Otherwise return 0*/
+
+function operator(num1, num2, aString){
+    switch (aString) {
+        case 'add':
+            console.log(add(num1, num2));
+            break;
+        case 'subtract':
+            console.log(subtract(num1, num2));
+            break;
+        case 'mult':
+            console.log(multiply(num1, num2));
+            break;
+        case 'div':
+            console.log(division(num1, num2));
+            break;
+        default:
+            console.log("you did not enter a proper operator");
+    }
+}
+
+operator(5,2, "add");
+operator(5,2, "subtract");
+operator(5,2, "mult");
+operator(5,2, "div");
+operator(5,2, "boom");
