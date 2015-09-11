@@ -145,3 +145,19 @@ function repeatString(string, number){
 console.log(repeatString("Kayla", 2));
 console.log(repeatString("Kayla", 1));
 console.log(repeatString(2, 5));
+
+/*a function that takes a string, and returns the reverse of that string*/
+function reverseString(string){
+    if (typeof string != 'string') {
+        return "The paramater is not a string! :(";
+    }
+    var placeHolder = "";
+    for (var i=0; i<string.length; i++) {
+        placeHolder += string.charAt(i);
+    }
+    return placeHolder;
+}
+
+console.log(reverseString("Kayla"));
+console.log(reverseString(""));
+console.log(reverseString(2));
