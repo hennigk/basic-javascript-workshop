@@ -21,3 +21,24 @@ function lastChar(lastString){
 };
 console.log(lastChar("Kayla"));
 console.log(lastChar(""));
+
+/*function that takes a string and a number, and returns the 
+character at the position represented by the number*/
+
+function numChar(charString, charNum){
+    if (charString != "") {
+        if (charNum > (charString.length - 1) ) {
+            return "Your number exceeds the length of the string!";
+        }
+        else {
+            return charString.charAt(charNum);
+       }
+    }
+    else {
+        return "empty string!";
+    }
+}
+
+console.log(numChar("Kayla", 4));
+console.log(numChar(" ", 3));
+console.log(numChar("", 0));
