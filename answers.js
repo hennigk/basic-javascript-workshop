@@ -225,4 +225,21 @@ function capitalize(phrase){
     return phraseHolder;
 }
 
-console.log(capitalize("Hello my NAME is KAYLA"))
+console.log(capitalize("Hello my NAME is KAYLA"));
+
+/*a function that takes an array and returns the 
+largest number of the array*/
+
+function largestArray(largeArray){
+    var arrayHolder = 0;
+    for (var i = 0; i <=largeArray.length; i++) {
+        if (largeArray[i] > arrayHolder) {
+            arrayHolder = largeArray[i];
+        }
+    }
+    console.log("the largest number in the array is:")
+    return arrayHolder;
+}
+
+console.log(largestArray([2, 6, 34, 99]));
+console.log(largestArray([2, 6, 22323, 88, 283, "help"]));
