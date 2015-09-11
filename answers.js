@@ -161,3 +161,18 @@ function reverseString(string){
 console.log(reverseString("Kayla"));
 console.log(reverseString(""));
 console.log(reverseString(2));
+
+/*a function that takes a number and returns the factorial of a number*/
+function factorial(factNum){
+    if (factNum < 0) {
+        return "negative numbers are not valid for factorials";
+    }
+    var factAnswer = 1;
+    for (var i=1; i<= factNum; i++){
+        factAnswer *= i; 
+    }
+    return factAnswer;
+}
+console.log(factorial(5));
+console.log(factorial(0));
+console.log(factorial(-2));
