@@ -176,3 +176,22 @@ function factorial(factNum){
 console.log(factorial(5));
 console.log(factorial(0));
 console.log(factorial(-2));
+
+/*a function that takes a phrase as a string, 
+and returns the longest word in that phrase*/
+
+function longPhrase(phrase){
+    var wordHolder = ""
+    var wordLong = ""
+    for (var i=0; i<=phrase.length; i++) {
+        if (phrase.charAt(i) == " ") {
+            if (wordHolder.length > wordLong.length) {
+                wordLong = wordHolder
+            }
+        wordHolder = "" }
+        else {wordHolder += phrase.charAt(i)}
+    }
+    return wordLong;
+}
+
+console.log(longPhrase("This is a test LONGWORDISREALLYBIG"));
