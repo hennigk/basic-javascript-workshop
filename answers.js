@@ -42,3 +42,30 @@ function numChar(charString, charNum){
 console.log(numChar("Kayla", 4));
 console.log(numChar(" ", 3));
 console.log(numChar("", 0));
+
+/*a function that takes two numbers and adds them together*/
+/*if you pass a string rather than a number, the function will
+return the two paramaters in a single string.*/
+
+function add(num1, num2) {
+    return num1 + num2;
+}
+
+console.log(add(8, 4));
+console.log(add("Kayla", 4));
+
+/*a function that takes two numbers and multiplies them together*/
+/*if you pass a string rather than a number, the function will
+return Not a Number.*/
+
+function multiply(num1, num2) {
+    if ((typeof num1 != 'number') || (typeof num2 != 'number')) {
+        return "One of the parameters is not a number!";
+    }
+    else {
+    return num1 * num2;
+    }
+}
+
+console.log(multiply(8, 4));
+console.log(multiply("Kayla", 4));
