@@ -128,3 +128,20 @@ operator(5,2, "subtract");
 operator(5,2, "mult");
 operator(5,2, "div");
 operator(5,2, "boom");
+
+/*a function that takes a string and a number, 
+and returns the string repeated that many number of times*/
+
+function repeatString(string, number){
+    var stringString = "";
+    if (typeof string == 'number') {
+        string = string.toString();
+    }
+    for (var i = 0; i < number; i++) {
+        stringString += string;
+    }
+    return stringString;
+}
+console.log(repeatString("Kayla", 2));
+console.log(repeatString("Kayla", 1));
+console.log(repeatString(2, 5));
