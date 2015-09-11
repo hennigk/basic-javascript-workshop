@@ -242,4 +242,20 @@ function largestArray(largeArray){
 }
 
 console.log(largestArray([2, 6, 34, 99]));
-console.log(largestArray([2, 6, 22323, 88, 283, "help"]));
+
+/*function that takes an array, and returns a filtered array. 
+The filtered array should only contain the truthy 
+values from the initial array*/
+
+function truthy(arrayValue){
+    if (arrayValue != null && arrayValue != false && arrayValue != 0 && arrayValue != "" && arrayValue != undefined) {
+        return arrayValue;
+    }
+}
+
+function truthyArray(arrayInput){
+        var filteredArray = arrayInput.filter(truthy);
+        return filteredArray;
+}
+
+console.log(truthyArray([2, 6, null, 6, 8, undefined, 10, 2323, "", "Kayla"]));
