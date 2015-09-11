@@ -181,17 +181,48 @@ console.log(factorial(-2));
 and returns the longest word in that phrase*/
 
 function longPhrase(phrase){
-    var wordHolder = ""
-    var wordLong = ""
+    var wordHolder = "";
+    var wordLong = "";
     for (var i=0; i<=phrase.length; i++) {
         if (phrase.charAt(i) == " ") {
             if (wordHolder.length > wordLong.length) {
-                wordLong = wordHolder
+                wordLong = wordHolder;
             }
-        wordHolder = "" }
+        wordHolder = "";
+        }
         else {wordHolder += phrase.charAt(i)}
     }
+    if (wordHolder.length > wordLong.length) {
+        wordLong = wordHolder }
     return wordLong;
 }
 
 console.log(longPhrase("This is a test LONGWORDISREALLYBIG"));
+
+/*a function that takes a phrase, 
+and returns the same phrase with every word capitalized
+goes through each character in phrase. wordStart keeps tract of the
+start of the word. if there is a space then it goes back and
+capitalizes the letter at word start and pushes the remaining word
+to the variable phraseHolder*/
+
+function capitalize(phrase){
+    var phraseHolder = "";
+    var charHolder = "";
+    var wordStart = 0;
+    var lowerPhrase = phrase.toLowerCase();
+    for (var i=0; i<=lowerPhrase.length; i++) {
+        if (lowerPhrase.charAt(i) == " " || lowerPhrase.length == i) {
+            charHolder = lowerPhrase.charAt(wordStart);
+            charHolder = charHolder.toUpperCase();
+            phraseHolder += charHolder;
+            for (var j = wordStart + 1; j<=i; j++) {
+                phraseHolder += lowerPhrase.charAt(j);
+            }
+            wordStart = i + 1;
+            }
+    }
+    return phraseHolder;
+}
+
+console.log(capitalize("Hello my NAME is KAYLA"))
