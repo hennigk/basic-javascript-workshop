@@ -152,7 +152,7 @@ function reverseString(string){
         return "The paramater is not a string! :(";
     }
     var placeHolder = "";
-    for (var i=0; i<string.length; i++) {
+    for (var i = string.length -1; i>= 0; i--) {
         placeHolder += string.charAt(i);
     }
     return placeHolder;
