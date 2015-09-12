@@ -290,8 +290,9 @@ function uniqArray(array1, array2){
     for (var i = 0; i <array2.length; i++) {
         array1.push(array2[i]);
     }
-    for (var j=0; j<array1.length; j++){
-    if (array1.indexOf(array1[j], j) === -1) {
+    var array1Length = array1.length
+    for (var j=0; j<array1Length; j++){
+    if (array1.indexOf(array1[j], j+1) < 0) {
         filteredArray.push(array1[j]);
     }
     array1.push(array1[j]);
@@ -299,4 +300,4 @@ function uniqArray(array1, array2){
     return filteredArray;
 }
 
-console.log(uniqArray([2, 5, 4, 6, "e"], [6, 7, 4, "b", "e"]));
+console.log(uniqArray([2, 5, 2, 'b', 'kayla', 4, 6, "e"], [6, 7, 4, "b", "e"]));
