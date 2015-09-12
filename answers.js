@@ -1,6 +1,6 @@
 //a function that takes returns the first character of a string
 function firstChar(aString){
-    if (aString != "") {
+    if (aString !== "") {
     return aString.charAt(0);
 }
     else {
@@ -10,9 +10,9 @@ function firstChar(aString){
 console.log(firstChar("Kayla"));
 console.log(firstChar(""));
 
-//a function that takes returns the last character of a string
+//a function that takes and returns the last character of a string
 function lastChar(lastString){
-    if (lastString != "") {
+    if (lastString !== "") {
     return lastString.charAt((lastString).length - 1);
 }
     else {
@@ -26,7 +26,7 @@ console.log(lastChar(""));
 character at the position represented by the number*/
 
 function numChar(charString, charNum){
-    if (charString != "") {
+    if (charString !== "") {
         if (charNum > (charString.length - 1) ) {
             return "Your number exceeds the length of the string!";
         }
@@ -107,43 +107,39 @@ return the ratio. Otherwise return 0*/
 function operator(num1, num2, aString){
     switch (aString) {
         case 'add':
-            console.log(add(num1, num2));
-            break;
+            return(add(num1, num2));
         case 'subtract':
-            console.log(subtract(num1, num2));
-            break;
+            return(subtract(num1, num2));
         case 'mult':
-            console.log(multiply(num1, num2));
-            break;
+            return(multiply(num1, num2));
         case 'div':
-            console.log(division(num1, num2));
-            break;
+            return(division(num1, num2));
         default:
-            console.log("you did not enter a proper operator");
+            return("you did not enter a proper operator");
     }
 }
 
-operator(5,2, "add");
-operator(5,2, "subtract");
-operator(5,2, "mult");
-operator(5,2, "div");
-operator(5,2, "boom");
+console.log(operator(5,2, "add"));
+console.log(operator(5,2, "subtract"));
+console.log(operator(5,2, "mult"));
+console.log(operator(5,2, "div"));
+console.log(operator(5,2, "boom"));
 
 /*a function that takes a string and a number, 
 and returns the string repeated that many number of times*/
 
-function repeatString(string, number){
+function repeatString(stringToRepeat, repeatTimes){
     var stringString = "";
-    if (typeof string == 'number') {
-        string = string.toString();
+    if (typeof stringToRepeat == 'number') {
+        stringToRepeat = stringToRepeat.toString();
     }
-    for (var i = 0; i < number; i++) {
-        stringString += string;
+    for (var i = 0; i < repeatTimes; i++) {
+        stringString += stringToRepeat;
     }
     return stringString;
 }
-console.log(repeatString("Kayla", 2));
-console.log(repeatString("Kayla", 1));
+console.log(repeatString("Kayla", 5));
+console.log(repeatString("Kayla", 0));
 console.log(repeatString(2, 5));
 
 /*a function that takes a string, and returns the reverse of that string*/
@@ -159,6 +155,8 @@ function reverseString(string){
 }
 
 console.log(reverseString("Kayla"));
+console.log(reverseString("Kayla likes javascript"));
+console.log(reverseString("will this line print in reverse?"));
 console.log(reverseString(""));
 console.log(reverseString(2));
 
