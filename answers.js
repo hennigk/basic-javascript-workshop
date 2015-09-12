@@ -276,3 +276,27 @@ function sumArray(arrayToSum){
 
 console.log(sumArray([2, 5, 9, 2, 90, 100]));
 console.log(sumArray([2, 6, null, 6, 8, undefined, 10, 2323, "", "Kayla"]));
+
+/*a function that takes two arrays, and returns an array of all elements 
+that are only in one array. 
+For example, with [1,2,3] and [1,2,4,5] the function should 
+return [3,4,5]
+1. combine all elements in one array
+2. make new array with just uniq elements*/
+
+function uniqArray(array1, array2){
+    var filteredArray = [];
+    var duplicateArray =[];
+    for (var i = 0; i <array2.length; i++) {
+        array1.push(array2[i]);
+    }
+    for (var j=0; j<array1.length; j++){
+    if (array1.indexOf(array1[j], j) === -1) {
+        filteredArray.push(array1[j]);
+    }
+    array1.push(array1[j]);
+    }
+    return filteredArray;
+}
+
+console.log(uniqArray([2, 5, 4, 6, "e"], [6, 7, 4, "b", "e"]));
