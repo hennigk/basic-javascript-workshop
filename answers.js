@@ -340,3 +340,5 @@ function mapArray(arrayToMap, mapFunction){
 
 console.log(mapArray([2, 9, 5, 10, 49, 47, 25], Math.sqrt));
 console.log(mapArray([2, 7, 10, 26, 90], greaterThan));
+
+
