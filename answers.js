@@ -262,10 +262,10 @@ console.log(truthyArray([2, 6, null, 6, 8, undefined, 10, 2323, "", "Kayla"]));
 and returns the sum of all the numbers in the array*/
 
 function sumArray(arrayToSum){
-    var ArraySumTruthy = truthyArray(arrayToSum)
+    //var ArraySumTruthy = truthyArray(arrayToSum)
     var sumOfArray = 0;
-    for (var i = 0; i< ArraySumTruthy.length; i++){
-        sumOfArray += ArraySumTruthy[i];
+    for (var i = 0; i< arrayToSum.length; i++){
+        sumOfArray += arrayToSum[i];
         //console.log(arrayToSum[i]);
         //console.log(typeof arrayToSum[i]);
     }
@@ -299,3 +299,44 @@ function uniqArray(array1, array2){
 }
 
 console.log(uniqArray([2, 5, 2, 'b', 'kayla', 4, 6, "e"], [6, 7, 4, "b", "e"]));
+
+/*a function that takes an array and a function as arguments. 
+The function should return a new array that maps every 
+element of the input array by passing it through the function you received. 
+not using map
+created a function called GreaterThan to test the mapping array. 
+MapArray takes an array and function as input. it then sends 
+each element of the array to the given function to be tested and pushes the
+returned value to a new array only if the returned value is not undefined*/
+
+function greaterThan(passedNumber, testValue){
+    var filteredArray =[];
+    if (testValue === undefined) {testValue = 10}
+    if (Array.isArray(passedNumber)) {
+        for (var i = 0; i < passedNumber.length; i++) {
+            if (passedNumber[i] > testValue) {
+                filteredArray.push(passedNumber[i]);
+            }
+        }
+        return filteredArray;
+    }
+        if (passedNumber > testValue) {
+            return passedNumber;
+        }
+}
+
+console.log(greaterThan(20, 2));
+console.log(greaterThan([2, 9, 5, 10, 49, 47, 25, 11, 28], 15));
+
+function mapArray(arrayToMap, mapFunction){
+    var mappedArray = [];
+    for (var i = 0; i < arrayToMap.length; i++){
+        if (mapFunction(arrayToMap[i]) !== undefined){
+        mappedArray.push(mapFunction(arrayToMap[i]));
+        }
+    }
+    return mappedArray;
+}
+
+console.log(mapArray([2, 9, 5, 10, 49, 47, 25], Math.sqrt));
+console.log(mapArray([2, 7, 10, 26, 90], greaterThan));
