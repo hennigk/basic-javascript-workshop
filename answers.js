@@ -300,18 +300,18 @@ function truthyArray(arrayInput){
         return filteredArray;
 }
 
-console.log(truthyArray([2, 6, null, 6, 8, undefined, 10, 2323, "", "Kayla", 0, false]));
+//console.log(truthyArray([2, 6, null, 6, 8, undefined, 10, 2323, "", "Kayla", 0, false]));
 
 /* a function that takes an array of numbers, 
 and returns the sum of all the numbers in the array*/
 
 function sumArray(arrayToSum){
-    //var ArraySumTruthy = truthyArray(arrayToSum)
     var sumOfArray = 0;
     for (var i = 0; i< arrayToSum.length; i++){
-        sumOfArray += arrayToSum[i];
-        //console.log(arrayToSum[i]);
-        //console.log(typeof arrayToSum[i]);
+        if (typeof arrayToSum[i] === "number") {
+            sumOfArray += arrayToSum[i];
+
+        }
     }
     return sumOfArray;
 }
