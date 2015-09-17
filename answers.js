@@ -159,7 +159,7 @@ console.log(reverseString(""));
 console.log(reverseString(2));
 
 /*a function that takes a number and returns the factorial of a number*/
-function factorial(factNum){
+function factorialLong(factNum){
     if (factNum < 0) {
         return "negative numbers are not valid for factorials";
     }
@@ -169,9 +169,26 @@ function factorial(factNum){
     }
     return factAnswer;
 }
-console.log(factorial(5));
-console.log(factorial(0));
-console.log(factorial(-2));
+
+function factorialShort(factNum) {
+    if (factNum < 0) {
+        return "negative numbers are not valid for factorials";
+    }
+    if (factNum === 0) {
+        return 1;
+    }
+    else {
+        return (factNum * factorialShort(factNum-1));
+    }
+}
+console.log(factorialLong(5));
+console.log(factorialLong(0));
+console.log(factorialLong(-2));
+
+console.log(factorialShort(5));
+console.log(factorialShort(0));
+console.log(factorialShort(-2));
+
 
 /*a function that takes a phrase as a string, 
 and returns the longest word in that phrase*/
