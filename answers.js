@@ -212,7 +212,7 @@ function longPhrase(phrase){
 
 function longPhraseSplit(phrase){
     var splitStrings = [];
-    var wordHolder = ""
+    var wordHolder = "";
     splitStrings = phrase.split(" ");
     for (var i = 0; i<splitStrings.length; i++){
        if (wordHolder.length < splitStrings[i].length) {
@@ -251,7 +251,23 @@ function capitalize(phrase){
     return phraseHolder;
 }
 
-console.log(capitalize("Hello my NAME is KAYLA"));
+//console.log(capitalize("Hello my NAME is KAYLA"));
+
+function capitalizeSplit(phrase) {
+    var firstChar = ""
+    var splitStrings = phrase.split(" ");
+    for (var i =0; i < splitStrings.length; i++){
+        var wordHolder = splitStrings[i];
+        wordHolder.toLowerCase();
+        firstChar = wordHolder.charAt(0).toUpperCase();
+        splitStrings[i] = firstChar + wordHolder.substr(1).toLowerCase();
+    }
+    return splitStrings.join(" ");
+}
+
+console.log(capitalizeSplit("Hello my NAME is KAYLA"));
+
+
 
 /*a function that takes an array and returns the 
 largest number of the array*/
