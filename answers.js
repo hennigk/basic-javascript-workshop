@@ -1,7 +1,7 @@
 //a function that takes returns the first character of a string
-function firstChar(aString){
-    if (aString !== "") {
-    return aString.charAt(0);
+function firstChar(inputString){
+    if (inputString !== "") {
+    return inputString.charAt(0);
 }
     else {
         return "empty string!";
@@ -102,8 +102,8 @@ If the string is ‘mult’, return the product.
 If the string is ‘div’, 
 return the ratio. Otherwise return 0*/
 
-function operator(num1, num2, aString){
-    switch (aString) {
+function operator(num1, num2, inputString){
+    switch (inputString) {
         case 'add':
             return(add(num1, num2));
         case 'subtract':
@@ -141,13 +141,13 @@ console.log(repeatString("Kayla", 0));
 console.log(repeatString(2, 5));
 
 /*a function that takes a string, and returns the reverse of that string*/
-function reverseString(string){
-    if (typeof string != 'string') {
+function reverseString(backwardsString){
+    if (typeof backwardsString != 'string') {
         return "The paramater is not a string! :(";
     }
     var placeHolder = "";
-    for (var i = string.length -1; i>= 0; i--) {
-        placeHolder += string.charAt(i);
+    for (var i = backwardsString.length -1; i>= 0; i--) {
+        placeHolder += backwardsString.charAt(i);
     }
     return placeHolder;
 }
