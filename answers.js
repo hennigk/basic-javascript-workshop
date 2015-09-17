@@ -223,7 +223,7 @@ function longPhraseSplit(phrase){
 }
 
 
-console.log(longPhraseSplit("This is a test LONGWORDISREALLYBIG"));
+//console.log(longPhraseSplit("This is a test LONGWORDISREALLYBIG"));
 
 /*a function that takes a phrase, 
 and returns the same phrase with every word capitalized
@@ -265,7 +265,7 @@ function capitalizeSplit(phrase) {
     return splitStrings.join(" ");
 }
 
-console.log(capitalizeSplit("Hello my NAME is KAYLA"));
+//console.log(capitalizeSplit("Hello my NAME is KAYLA"));
 
 
 
@@ -283,14 +283,14 @@ function largestArray(largeArray){
     return arrayHolder;
 }
 
-console.log(largestArray([2, 6, 34, 99]));
+//console.log(largestArray([2, 6, 34, 99]));
 
 /*function that takes an array, and returns a filtered array. 
 The filtered array should only contain the truthy 
 values from the initial array*/
 
 function truthy(arrayValue){
-    if (arrayValue != null && arrayValue != false && arrayValue != 0 && arrayValue != "" && arrayValue != undefined) {
+    if (arrayValue) {
         return arrayValue;
     }
 }
@@ -300,7 +300,7 @@ function truthyArray(arrayInput){
         return filteredArray;
 }
 
-console.log(truthyArray([2, 6, null, 6, 8, undefined, 10, 2323, "", "Kayla"]));
+console.log(truthyArray([2, 6, null, 6, 8, undefined, 10, 2323, "", "Kayla", 0, false]));
 
 /* a function that takes an array of numbers, 
 and returns the sum of all the numbers in the array*/
