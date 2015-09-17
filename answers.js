@@ -6,9 +6,9 @@ function firstChar(aString){
     else {
         return "empty string!";
     }
-};
+}
 console.log(firstChar("Kayla"));
-console.log(firstChar(""));
+//console.log(firstChar(""));
 
 //a function that takes and returns the last character of a string
 function lastChar(lastString){
@@ -18,25 +18,23 @@ function lastChar(lastString){
     else {
         return "empty string!";
     }
-};
+}
 console.log(lastChar("Kayla"));
-console.log(lastChar(""));
+//console.log(lastChar(""));
 
 /*function that takes a string and a number, and returns the 
 character at the position represented by the number*/
 
 function numChar(charString, charNum){
-    if (charString !== "") {
-        if (charNum > (charString.length - 1) ) {
-            return "Your number exceeds the length of the string!";
-        }
-        else {
-            return charString.charAt(charNum);
-       }
+    try {
+        if (!charString) throw "not valid string"; 
+        if (charNum > charString.length - 1) throw "number too long";
+        if (charNum < 0) throw "number too low";
     }
-    else {
-        return "empty string!";
+    catch(error) {
+        console.log("Error: " + error);
     }
+    return charString.charAt(charNum);
 }
 
 console.log(numChar("Kayla", 4));
