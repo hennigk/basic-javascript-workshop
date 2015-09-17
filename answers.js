@@ -7,7 +7,7 @@ function firstChar(inputString){
         return "empty string!";
     }
 }
-console.log(firstChar("Kayla"));
+//console.log(firstChar("Kayla"));
 //console.log(firstChar(""));
 
 //a function that takes and returns the last character of a string
@@ -19,7 +19,7 @@ function lastChar(lastString){
         return "empty string!";
     }
 }
-console.log(lastChar("Kayla"));
+//console.log(lastChar("Kayla"));
 //console.log(lastChar(""));
 
 /*function that takes a string and a number, and returns the 
@@ -37,9 +37,9 @@ function numChar(charString, charNum){
     return charString.charAt(charNum);
 }
 
-console.log(numChar("Kayla", 4));
-console.log(numChar(" ", 3));
-console.log(numChar("", 0));
+// console.log(numChar("Kayla", 4));
+// console.log(numChar(" ", 3));
+// console.log(numChar("", 0));
 
 /*a function that takes two numbers and adds them together*/
 /*if you pass a string rather than a number, the function will
@@ -49,8 +49,8 @@ function add(num1, num2) {
     return num1 + num2;
 }
 
-console.log(add(8, 4));
-console.log(add("Kayla", 4));
+// console.log(add(8, 4));
+// console.log(add("Kayla", 4));
 
 /*a function that takes two numbers and multiplies them together*/
 /*if you pass a string rather than a number, the function will
@@ -65,8 +65,8 @@ function multiply(num1, num2) {
     }
 }
 
-console.log(multiply(8, 4));
-console.log(multiply("Kayla", 4));
+// console.log(multiply(8, 4));
+// console.log(multiply("Kayla", 4));
 
 
 /*a function that takes two numbers and subtracts them*/
@@ -78,8 +78,8 @@ function subtract(num1, num2) {
     return num1 - num2;
     }
 }
-console.log(subtract(8, 4));
-console.log(subtract("Kayla", 4));
+// console.log(subtract(8, 4));
+// console.log(subtract("Kayla", 4));
 
 /*a function that takes two numbers and divides them*/
 function division(num1, num2) {
@@ -91,8 +91,8 @@ function division(num1, num2) {
     }
 }
 
-console.log(division(8, 4));
-console.log(division("Kayla", 4));
+// console.log(division(8, 4));
+// console.log(division("Kayla", 4));
 
 
 /*a function that takes two numbers and a string. 
@@ -117,11 +117,11 @@ function operator(num1, num2, inputString){
     }
 }
 
-console.log(operator(5,2, "add"));
-console.log(operator(5,2, "subtract"));
-console.log(operator(5,2, "mult"));
-console.log(operator(5,2, "div"));
-console.log(operator(5,2, "boom"));
+// console.log(operator(5,2, "add"));
+// console.log(operator(5,2, "subtract"));
+// console.log(operator(5,2, "mult"));
+// console.log(operator(5,2, "div"));
+// console.log(operator(5,2, "boom"));
 
 /*a function that takes a string and a number, 
 and returns the string repeated that many number of times*/
@@ -136,9 +136,9 @@ function repeatString(stringToRepeat, repeatTimes){
     }
     return stringString;
 }
-console.log(repeatString("Kayla", 5));
-console.log(repeatString("Kayla", 0));
-console.log(repeatString(2, 5));
+// console.log(repeatString("Kayla", 5));
+// console.log(repeatString("Kayla", 0));
+// console.log(repeatString(2, 5));
 
 /*a function that takes a string, and returns the reverse of that string*/
 function reverseString(backwardsString){
@@ -152,11 +152,11 @@ function reverseString(backwardsString){
     return placeHolder;
 }
 
-console.log(reverseString("Kayla"));
-console.log(reverseString("Kayla likes javascript"));
-console.log(reverseString("will this line print in reverse?"));
-console.log(reverseString(""));
-console.log(reverseString(2));
+// console.log(reverseString("Kayla"));
+// console.log(reverseString("Kayla likes javascript"));
+// console.log(reverseString("will this line print in reverse?"));
+// console.log(reverseString(""));
+// console.log(reverseString(2));
 
 /*a function that takes a number and returns the factorial of a number*/
 function factorialLong(factNum){
@@ -181,13 +181,13 @@ function factorialShort(factNum) {
         return (factNum * factorialShort(factNum-1));
     }
 }
-console.log(factorialLong(5));
-console.log(factorialLong(0));
-console.log(factorialLong(-2));
+// console.log(factorialLong(5));
+// console.log(factorialLong(0));
+// console.log(factorialLong(-2));
 
-console.log(factorialShort(5));
-console.log(factorialShort(0));
-console.log(factorialShort(-2));
+// console.log(factorialShort(5));
+// console.log(factorialShort(0));
+// console.log(factorialShort(-2));
 
 
 /*a function that takes a phrase as a string, 
@@ -210,7 +210,20 @@ function longPhrase(phrase){
     return wordLong;
 }
 
-console.log(longPhrase("This is a test LONGWORDISREALLYBIG"));
+function longPhraseSplit(phrase){
+    var splitStrings = [];
+    var wordHolder = ""
+    splitStrings = phrase.split(" ");
+    for (var i = 0; i<splitStrings.length; i++){
+       if (wordHolder.length < splitStrings[i].length) {
+           wordHolder = splitStrings[i];
+       } 
+    }
+    return wordHolder;
+}
+
+
+console.log(longPhraseSplit("This is a test LONGWORDISREALLYBIG"));
 
 /*a function that takes a phrase, 
 and returns the same phrase with every word capitalized
